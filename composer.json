@@ -1,0 +1,17 @@
+{
+    "name": "estalapaul/blockchain",
+    "description": "A project for learning about blockchain",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Estalapaul\\Blockchain\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Paul Estala",
+            "email": "pestala495@tutanota.com"
+        }
+    ],
+    "require": {}
+}
