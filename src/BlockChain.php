@@ -1,6 +1,6 @@
 <?php
 
-namespace EstalaPaul\BlockChain;
+namespace EstalaPaul;
 
 class BlockChain
 {
@@ -24,8 +24,26 @@ class BlockChain
     public function addBlock(Block $block)
     {
         $block->previousHash = $this->getLatestBlock()->blockHash;
-        $block->hash = $block->calculateHash();
+        $block->blockHash = $block->calculateHash();
         $this->chain[] = $block;
+    }
+
+    public function isChainValid(): bool
+    {
+        for ($i = 1; $i < count($this->chain); $i++) {
+            $currentBlock = $this->chain[$i];
+            $previousBlock = $this->chain[$i - 1];
+
+            if ($currentBlock->blockHash !== $currentBlock->calculateHash()) {
+                return false;
+            }
+
+            if ($currentBlock->previousHash !== $previousBlock->blockHash) {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     private function createGenesisBlock(): Block

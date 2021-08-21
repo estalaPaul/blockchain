@@ -1,6 +1,6 @@
 <?php
 
-namespace EstalaPaul\BlockChain;
+namespace EstalaPaul;
 
 class Block
 {
@@ -39,7 +39,7 @@ class Block
      */
     public string $blockHash;
 
-    public function __construct(int $index, int $timestamp, array $data, string $previousHash)
+    public function __construct(int $index, int $timestamp, array $data, string $previousHash = '')
     {
         $this->index = $index;
         $this->timestamp = $timestamp;
