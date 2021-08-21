@@ -12,6 +12,9 @@
             "Tests\\": "tests/"
         }
     },
+    "scripts": {
+        "test": "vendor/bin/phpunit --configuration phpunit.xml tests"
+    },
     "authors": [
         {
             "name": "Paul Estala",
